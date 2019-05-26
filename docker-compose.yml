@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  influxdb:
+    image: influxdb:latest
+    volumes:
+      - influxdb-volume:/var/lib/influxdb
+      - ./influxdb/influx-init.sh:/docker-entrypoint-initdb.d/influx-init.sh
+    networks:
+      - ruuvicollector-net
+    ports:
+      - "127.0.0.1:8086:8086"
+  grafana:
+    depends_on:
+      - influxdb
+    image: grafana/grafana:latest
+    volumes:
+      - grafana-volume:/var/lib/grafana
+      - ./grafana/grafana_datasource.yaml:/etc/grafana/provisioning/datasources/grafana_datasource.yaml
+      - ./grafana/grafana_dashboard.yaml:/etc/grafana/provisioning/dashboards/grafana_dashboard.yaml
+      - ./grafana/grafana_dashboard.json:/var/lib/grafana/dashboards/grafana_dashboard.json
+    networks:
+      - ruuvicollector-net
+    ports:
+      - "8080:3000"
+  ruuvicollector:
+     depends_on:
+       - influxdb
+     build:
+       context: .
+     network_mode: host
+     privileged: true
+
+volumes:
+  influxdb-volume:
+  grafana-volume:
+networks:
+  ruuvicollector-net:

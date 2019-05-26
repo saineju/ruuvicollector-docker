@@ -1,0 +1,10 @@
+# config file version
+apiVersion: 1
+
+datasources:
+- name: Ruuvi InfluxDB
+  type: influxdb
+  database: ruuvi
+  url: http://influxdb:8086
+  isDefault: true
+  access: proxy
