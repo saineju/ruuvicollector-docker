@@ -26,8 +26,10 @@ problems.
 
 * Install docker CE (do not use the one from debian repository)
 
-```curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh```
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
 
 For more complete information refer to official instructions: https://docs.docker.com/install/linux/docker-ce/debian/
 
