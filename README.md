@@ -12,6 +12,7 @@ bluetooth 4.0 LE)
 
 This setup script is based on instructions from here:
 * https://blog.ruuvi.com/rpi-gateway-6e4a5b676510
+
 And the actual RuuviCollector is from Scrin:
 * https://github.com/Scrin/RuuviCollector
 
@@ -20,13 +21,15 @@ problems.
 
 ## Prerequisites
 * If you have installed docker from raspberry pi debian repository, remove it before installing CE version
+
 `sudo apt-get remove docker docker-engine docker.io containerd runc`
+
 * Install docker CE (do not use the one from debian repository)
+
 ```curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh```
+
 For more complete information refer to official instructions: https://docs.docker.com/install/linux/docker-ce/debian/
-
-
 
 * Install python3, python3-pip & libffi-dev
 `sudo apt-get install python3 python3-pip python3-dev libffi-dev`
