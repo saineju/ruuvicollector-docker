@@ -34,6 +34,7 @@ sudo sh get-docker.sh
 For more complete information refer to official instructions: https://docs.docker.com/install/linux/docker-ce/debian/
 
 * Install python3, python3-pip & libffi-dev
+
 `sudo apt-get install python3 python3-pip python3-dev libffi-dev`
 
 * install docker-compose
@@ -41,10 +42,11 @@ pip3 install docker-compose
 
 ## Usage
 When all prerequisites are met the setup should just work with command
+
 `sudo docker-compose -d up`
 
 When dockers are up and running (may take some time as it needs to build the ruuvicollector docker)
-you should be able to browse to <your server private ip>:8080 and see grafana login page
+you should be able to browse to [your server private ip]:8080 and see grafana login page
 
 log in with admin/admin, change admin password and you should see welcome screen with 
 "Create datasource" and "Create Dashboard" both crossed out and Ruuvi Temperature -dashboard
