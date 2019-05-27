@@ -38,7 +38,8 @@ For more complete information refer to official instructions: https://docs.docke
 `sudo apt-get install python3 python3-pip python3-dev libffi-dev`
 
 * install docker-compose
-pip3 install docker-compose
+
+`pip3 install docker-compose`
 
 ## Usage
 When all prerequisites are met the setup should just work with command
