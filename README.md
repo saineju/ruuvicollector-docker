@@ -33,9 +33,9 @@ sudo sh get-docker.sh
 
 For more complete information refer to official instructions: https://docs.docker.com/install/linux/docker-ce/debian/
 
-* Install python3, python3-pip & libffi-dev
+* Install python3, python3-pip & libffi-dev libssl-dev
 
-`sudo apt-get install python3 python3-pip python3-dev libffi-dev`
+`sudo apt-get install python3 python3-pip python3-dev libffi-dev libssl-dev`
 
 * install docker-compose
 
@@ -44,7 +44,14 @@ For more complete information refer to official instructions: https://docs.docke
 ## Usage
 When all prerequisites are met the setup should just work with command
 
-`sudo docker-compose -d up`
+* clone this repo and run docker-compose
+```
+git clone https://github.com/saineju/ruuvicollector-docker
+cd ruuvicollector-docker
+sudo docker-compose -d up
+```
+
+If you want to see the logs from dockers, you can omit the `-d` option
 
 When dockers are up and running (may take some time as it needs to build the ruuvicollector docker)
 you should be able to browse to [your server private ip]:8080 and see grafana login page
